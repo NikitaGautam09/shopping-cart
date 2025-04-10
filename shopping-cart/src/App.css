@@ -1,0 +1,165 @@
+.container{
+  padding:2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1800px;
+  margin: 0 auto;
+  background-color: #f5f5f5
+}
+
+.products{
+  display: flex;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr)) ;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.product{
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.product p{
+  margin: 0.5rem  0;
+}
+
+.product button{
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.product button:hover{
+  background-color: #007bff;
+
+}
+
+.cart{
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1rem;
+}
+
+.cart h3{
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cart-summary{
+  margin-bottom: 1rem;
+  background-color: white;
+  height: 150px;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+
+}
+
+.subtotal-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.subtotal-amount{
+  font-weight: bold;
+}
+
+.progress-wrapper{
+  margin: 2rem 0;
+  padding: 0.5rem;
+  background-color: #ecf5fd;
+  border-radius: 4px;
+}
+
+.gift-msg{
+  color:#28a745;
+  font-weight: bold;
+  padding: 0.5rem;
+  background-color: #e8f5e9;
+  border-radius: 4px;
+}
+
+.progress-bar{
+  background-color: #e9ecef;
+  height: 13px;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-top: 5px;
+
+}
+
+.progress{
+  background: #007bff;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.cart-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  background-color: white;
+  height: 75px;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.qty-buttons{
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
+}
+
+.qty-btn{
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.2s ease;
+}
+.decrement{
+  background-color: red;
+
+}
+
+.increment{
+  background-color: green;
+}
+
+
+.gift-label{
+  background-color: #64b578;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.cart-items{
+  margin-top: 1rem;
+}
+
+.empty{
+  text-align: center;
+  color: #6c757d;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f8f9f6;
+  border-radius: 4px;
+}
