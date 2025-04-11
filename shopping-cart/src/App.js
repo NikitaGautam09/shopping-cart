@@ -57,9 +57,12 @@ const decrement = (id) =>{
       if(item.id===FREE_GIFT.id) return prev;
       return prev.filter(i=>i.id !==id)
     }
-    return prev.map(i=>i.id===id ? {...i,quantity:i.quantity-1}:+1)
+    return prev.map(i => i.id === id ? { ...i, quantity: i.quantity - 1 } : i);
+
   })
 }
+
+const remaining = Math.max(0, THRESHOLD - subtotal);
   return (
     <div className="container">
       <h2>Shopping Cart</h2>
@@ -67,7 +70,7 @@ const decrement = (id) =>{
       <div className="products">
         {PRODUCTS.map(p=>(
           <div key={p.id} className="product">
-            <p>{p.name}<br/>{p.price}</p>
+            <p>{p.name}<br/>₹{p.price}</p>
             <button onClick={()=>addToCart(p)}>Add to Cart</button>
           </div>
         ))}
@@ -78,14 +81,14 @@ const decrement = (id) =>{
         <div className="cart-summary">
           <div className="subtotal-row">
             <span>Subtotal:</span>
-            <span className="subtotal-amount">{subtotal}</span>
+            <span className="subtotal-amount">₹{subtotal}</span>
           </div>
           <hr></hr>
           {subtotal >= THRESHOLD ? (
             <p className="gift-msg">You got a FREE Wireless Mouse!</p>
           ):(
             <div className="progress-wrapper">
-          <p>Add remaing more to get a FREE Wireless Mouse!</p>
+          <p>Add ₹{remaining} more to get a FREE Wireless Mouse!</p>
           <div className="progress-bar">
             <div className="progress" style={{width:`${(subtotal / THRESHOLD) * 100}%`}}></div>
           </div>
@@ -103,7 +106,7 @@ const decrement = (id) =>{
             </div>
             {cart.map(item=>(
               <div key={item.id} className="cart-item">
-                <p>{item.name}<br/> {item.price}x{item.quantity}={item.price*item.quantity}</p>
+                <p>{item.name}<br/>₹{item.price}x{item.quantity}=₹{item.price*item.quantity}</p>
                 {item.id!==FREE_GIFT.id &&(
                   <div className="qty-buttons">
                     <button className="qty-btn decrement" onClick={()=> decrement(item.id)}>-</button>
